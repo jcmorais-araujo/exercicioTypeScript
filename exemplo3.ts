@@ -28,8 +28,9 @@ class Concessionaria {
     private endereco: string
     private listaDeCarros: any
 
-    constructor(endereco: string) {
+    constructor(endereco: string, listaDeCarros:Array<Carro>) {
         this.endereco = endereco;
+        this.listaDeCarros = listaDeCarros;
     }
 
     public fornecerEndereco(): string {
@@ -41,7 +42,47 @@ class Concessionaria {
     }
 }
 
-let concessionaria = new Concessionaria('Av Paulista');
-console.log(concessionaria);
+class Pessoa {
+
+    private nome: string
+    private carroPreferido: string
+    private carro: any
+
+    constructor(nome: string, carroPreferido: string) {
+        this.nome = nome
+        this.carroPreferido = carroPreferido
+    }
+
+    public dizerNome(): string {
+        return this.nome
+    }
+
+    public dizerCarroPreferido(): string {
+        return this.carroPreferido
+    }
+
+    public comprarCarro(carro: any): any {
+        this.carro
+    }
+
+    public dizerCarroQueTem(): any {
+        return this.carro
+    }
+
+}
+
+// Criar carros
+
+let carroA = new Carro('Dodge Journey', 4);
+let carroB = new Carro('Veloster', 3);
+let carroC = new Carro('Cerato', 4);
+
+
+// Mostrar a lista de Carros
+
+let listaDeCarros: Array<Carro> = [carroA, carroB, carroC];
+
+let concessionaria = new Concessionaria('Recife', listaDeCarros);
+
 
 
