@@ -1,30 +1,47 @@
 class Carro {
 
-    private modelo : string
-    private numeroDePortas : number
-    private velocidade : number = 0
+    private modelo: string
+    private numeroDePortas: number
+    private velocidade: number = 0
 
-    constructor(modelo : string, numeroDePortas : number){
+    constructor(modelo: string, numeroDePortas: number) {
         this.modelo = modelo;
         this.numeroDePortas = numeroDePortas;
     }
 
-    public acelerar() : void {
-        this.velocidade +=10;
+    public acelerar(): void {
+        this.velocidade += 10;
     }
 
-    public parar() : void {
+    public parar(): void {
         this.velocidade = 0;
     }
 
-    public velocidadeAtual() : number {
+    public velocidadeAtual(): number {
         return this.velocidade;
     }
-    
+
 };
 
-let carroA = new Carro("Veloster", 3);
 
-carroA.acelerar();
+class Concessionaria {
+    private endereco: string
+    private listaDeCarros: any
+
+    constructor(endereco: string) {
+        this.endereco = endereco;
+    }
+
+    public fornecerEndereco(): string {
+        return this.endereco
+    }
+
+    public mostrarListaDeCarros(): any {
+        return this.listaDeCarros
+    }
+}
+
+let concessionaria = new Concessionaria('Av Paulista');
+console.log(concessionaria);
 
 
